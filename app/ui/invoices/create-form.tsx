@@ -1,4 +1,5 @@
 'use client';
+
 import { CustomerField } from '@/app/lib/definitions';
 import Link from 'next/link';
 import {
@@ -12,7 +13,7 @@ import { createInvoice, State } from '@/app/lib/actions';
 import { useActionState } from 'react';
 
 export default function Form({ customers }: { customers: CustomerField[] }) {
-  const initialState = {message: null, errors: {}};
+  const initialState = {message: '', errors: {}};
   const [state, formAction] = useActionState(createInvoice, initialState);
   return (
     <form action={formAction}>
